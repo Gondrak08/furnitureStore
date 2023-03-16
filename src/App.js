@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {Navbar,Hero,Promotions, Footer} from './components'
+import './global.css';
+
+import {ArrPromotions, Promotion} from './utils/promotions'
+
+// console.log('arrPromotions',ArrPromotions)
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Navbar/>
+        <Hero/>    
       </header>
+      {/* <Promotions  /> */}
+      <Promotions promotion={ArrPromotions} />
+      <Promotions promotion={Promotion} />
+
+
+      <Footer/>
     </div>
   );
 }

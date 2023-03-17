@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Navigation } from "swiper";
+
 import "swiper/css";
 import "swiper/css/pagination";
-
+import "swiper/css/navigation";
 
 const Promotions = (promotion) => {
     const [selectButton, setSelectButton] = useState("");
@@ -14,56 +15,73 @@ const Promotions = (promotion) => {
         setSelectButton(id);
     }
 
-    const SinglePromotion = ({promotionName,products, button}) => {
-        console.log(products)
+    const SinglePromotion = ({ promotion, products, button }) => {
+        const promotionName = promotion.name;
+        console.log(promotion)
         return (
-        <>
-           <div className="head">
-                <h3>
-                    promoção {promotionName}
-                </h3>
-            </div>
-            <div className='swiper-container' >
-                <Swiper slidesPerView={4} pagination={true} modules={[Pagination]} className="mySwiper promotionSwiper">
-                  
-                    {products.map((item, index)=>(
-                        <SwiperSlide key={index} > 
-                            <div href='#' className='card'>
-                                <div className='head'>
-                                    <a>
-                                        <div className='AspectRatio'>
-                                            <img  src={item.image} /> 
-                                        </div>
+            <>
+                <div className="head">
+                    <h3>
+                        promoção {promotionName}
+                    </h3>
+                </div>
+                <div className='swiper-container' >
+                    <Swiper slidesPerView={4} pagination={true} modules={[Pagination]} className="mySwiper promotionSwiper">
 
-                                    </a>
-                                </div>
-                                <div className='body' >
-                                    <div>
-                                        <h3>
-                                            {item.name}
-                                        </h3>
-                                        <span>{item.price}</span>
+                        {products.map((item, index) => (
+                            <SwiperSlide key={index} >
+                                <div href='#' className='card'>
+                                    <div className='head'>
+                                        {
+                                            item.isPromotion ? (
+                                                <span className='product-label' >
+                                                    Em Promoção
+                                                </span>
+                                            ) :
+                                                null}
+                                        <a>
+                                            <div className='AspectRatio'>
+                                                <img src={item.image} />
+                                            </div>
+
+                                        </a>
+                                    </div>
+                                    <div className='body' >
+                                        <div>
+                                            <h3>
+                                                {item.name}
+                                            </h3>
+                                            {item.isPromotion ? (
+                                                <div className='price-box' >
+                                                    <span className='discount' >${item.price * (100 - item.DiscountPercent) / 100}</span>
+                                                    <span className='full-price' >${item.price}</span>
+                                                </div>
+                                            ) : (
+                                                <span>${item.price}</span>
+                                            )
+                                            }
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
-                ))}
-                </Swiper>
-                <div className='pagination container' ></div>
-            </div>
-            <div className='see-more-button-display'>
-                <button className='button'>{button.name}</button>
-            </div>
-        </>)
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                    <div className='pagination container' ></div>
+                </div>
+                <div className='see-more-button-display'>
+                    <button className='button'>{button.name}</button>
+                </div>
+            </>)
     };
 
     const ArrPromotions = ({ products, button }) => {
-        useEffect(()=>{
-            if(selectButton == ''){
+        useEffect(() => {
+            if (selectButton == '') {
                 let key = Object.keys(products)[0]
-                setSelectButton(products[key].type);                                                                   
-            }                                                                                                                                       
-        },[])
+                setSelectButton(products[key].type);
+            }
+        }, [])
 
         return (<>
             <div className="head">
@@ -81,16 +99,32 @@ const Promotions = (promotion) => {
                 </div>
             </div>
             <div className='swiper-container' >
-                <Swiper slidesPerView={4} pagination={true} modules={[Pagination]} className="mySwiper promotionSwiper">
+                <Swiper 
+                slidesPerView={4} 
+                modules={[Navigation]}
+                navigation={{
+                prevEl: ".prev",
+                nextEl: ".next",
+                }}
+                  
+                 className="mySwiper promotionSwiper">
                     {
                         Object.keys(products).map(key => {
 
                             if (selectButton === products[key].type) {
 
                                 return products[key].products.map((item, index) => (
-                                    <SwiperSlide key={index} >
+                                    <SwiperSlide key={index}
+                                    >
                                         <div href='#' className='card'>
                                             <div className='head'>
+                                                {
+                                                    item.isPromotion ? (
+                                                        <span className='product-label' >
+                                                            Em Promoção
+                                                        </span>
+                                                    ) : null
+                                                }
                                                 <a>
                                                     <div className='AspectRatio'>
                                                         <img src={item.image} />
@@ -103,7 +137,15 @@ const Promotions = (promotion) => {
                                                     <h3>
                                                         {item.name}
                                                     </h3>
-                                                    <span>{item.price}</span>
+                                                    {item.isPromotion ? (
+                                                        <div className='price-box' >
+                                                            <span className='discount' >${item.price * (100 - item.DiscountPercent) / 100}</span>
+                                                            <span className='full-price' >${item.price}</span>
+                                                        </div>
+                                                    ) : (
+                                                        <span>${item.price}</span>
+                                                    )
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -112,9 +154,17 @@ const Promotions = (promotion) => {
                             }
                         })
                     }
-                 
+
                 </Swiper>
-                <div className='pagination container' ></div>
+                <div className='swiper-navigation-container' >
+                    <button  className='prev'>
+                        {"<"}
+                    </button>
+                    <button  className='next'>
+                    {">"}
+                    </button>
+                </div>
+
             </div>
             <div className='see-more-button-display'>
                 <button className='button'>{button.name}</button>
@@ -126,7 +176,7 @@ const Promotions = (promotion) => {
     return (
         <section className="Promotion-display">
             {promotion.promotion.type === "array" && (<ArrPromotions products={promotion.promotion.products} button={promotion.promotion.SeeMoreButton} />)}
-            {promotion.promotion.type === "object" && (<SinglePromotion promotionName={promotion.promotion.name}  products={promotion.promotion.products} button={promotion.promotion.SeeMoreButton} />)}
+            {promotion.promotion.type === "object" && (<SinglePromotion promotion={promotion.promotion} products={promotion.promotion.products} button={promotion.promotion.SeeMoreButton} />)}
         </section>
     )
 };

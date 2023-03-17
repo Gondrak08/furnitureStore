@@ -41,49 +41,49 @@ export const ArrPromotions = {
                 {
                     name: "cadeira branca echair",
                     image: ChairOne,
-                    price: "$35",
+                    price: "35",
                     isPromotion: false,
                     discount: '0'
                 },
                 {
                     name: "cadeirão cinza milan",
                     image: ChairTwo,
-                    price: "$60",
+                    price: "60",
                     isPromotion: false,
                     discount: 0
                 },
                 {
                     name: "cadeira toupeira pads",
                     image: ChairThree,
-                    price: "$50",
+                    price: "50",
                     isPromotion: false,
                     discount: 0
                 },
                 {
                     name: "cadeirão azul milan",
                     image: ChairFour,
-                    price: "$60",
+                    price: "60",
                     isPromotion: false,
                     discount: 0
                 },
                 {
                     name: "cadeira preta chair",
                     image: ChairFive,
-                    price: "$35",
+                    price: "35",
                     isPromotion: false,
                     discount: 0
                 },
                 {
                     name: "cadeira cinza echair",
                     image: ChairSix,
-                    price: "$35",
+                    price: "35",
                     isPromotion: false,
                     discount: 0
                 },
                 {
                     name: "poltrona odemira",
                     image: ChairSeven,
-                    price: "$85",
+                    price: "85",
                     isPromotion: false,
                     discount: 0
 
@@ -91,7 +91,7 @@ export const ArrPromotions = {
                 {
                     name: "cadeira cinza pads",
                     image: ChairEight,
-                    price: "$50",
+                    price: "50",
                     isPromotion: false,
                     discount: 0
 
@@ -99,7 +99,7 @@ export const ArrPromotions = {
                 {
                     name: "cadeira rosa torino",
                     image: ChairNine,
-                    price: "$85",
+                    price: "85",
                     isPromotion: false,
                     discount: 0
 
@@ -107,7 +107,7 @@ export const ArrPromotions = {
                 {
                     name: "cadeira dobrável metal branca",
                     image: ChairTen,
-                    price: "$85",
+                    price: "85",
                     isPromotion: false,
                     discount: 0
 
@@ -115,14 +115,14 @@ export const ArrPromotions = {
                 {
                     name: "poltrona echair weave preta",
                     image: ChairEleven,
-                    price: "$85",
+                    price: "85",
                     isPromotion: false,
                     discount: 0
 
                 }, {
                     name: "cadeira castanha lecce",
                     image: ChairTwelve,
-                    price: "$85",
+                    price: "85",
                     isPromotion: false,
                     discount: 0
                 },
@@ -137,35 +137,35 @@ export const ArrPromotions = {
                 {
                     name: "movél de tv nordic",
                     image: Mob1,
-                    price: "$35",
+                    price: "35",
                     isPromotion: false,
                     DiscountPercent: 20
                 },
                 {
                     name: "aparador portas e gatevas nordic",
                     image: Mob2,
-                    price: "$35",
+                    price: "35",
                     isPromotion: false,
                     DiscountPercent: 20
                 },
                 {
                     name: "mesa consola nordic",
                     image: Mob3,
-                    price: "$35",
+                    price: "35",
                     isPromotion: false,
                     DiscountPercent: 20
                 },
                 {
                     name: "aparador de gavetas nordic",
                     image: Mob4,
-                    price: "$35",
+                    price: "35",
                     isPromotion: false,
                     DiscountPercent: 20
                 },
                 {
                     name: "aparador nordic",
                     image: Mob5,
-                    price: "$35",
+                    price: "35",
                     isPromotion: false,
                     DiscountPercent: 20
                 },
@@ -189,28 +189,28 @@ export const Promotion = {
             {
                 name: "movél de tv nordic",
                 image: FurnOne,
-                price: "$35",
+                price: "199",
                 isPromotion: true,
                 DiscountPercent: 20
             },
             {
                 name: "aparador portas e gatevas nordic",
                 image: FurnTwo,
-                price: "$35",
+                price: "549",
                 isPromotion: true,
                 DiscountPercent: 20
             },
             {
                 name: "mesa consola nordic",
                 image: FurnThree,
-                price: "$35",
+                price: "399",
                 isPromotion: true,
                 DiscountPercent: 20
             },
             {
                 name: "aparador de gavetas nordic",
                 image: FurnFour,
-                price: "$35",
+                price: "299",
                 isPromotion: true,
                 DiscountPercent: 20
             },

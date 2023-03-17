@@ -15,11 +15,21 @@
   --text-font-weight: 400;
   --text-font-style: normal;
   --text-color: #383838;
-  
+  --text-color-rgb: 56, 56, 56;
+  --text-color-light: #5e5e5e;
+  --text-color-light-rgb: 94, 94, 94;
+
+  --product-sale-price-color: #f94c43;
+
   --base-text-font-size: 14px;
   --base-text-font-size: 14px;
   --background: #ffff;
   --button-background: #29383e;
+  --border-color: #e1e1e1;
+  --border-color-rgb: 225, 225, 225;
+  --button-background: #29383e;
+  --button-background-rgb: 41, 56, 62;
+  --button-text-color: #ffffff;
   --border-color: #e1e1e1;
   --border-color-rgb: 225, 225, 225;
   
@@ -30,9 +40,6 @@
   --footer-heading-color: #29383e;
   --footer-border-color:#e9e9e9;
 }
-
-
-
 
 
 body{
@@ -114,7 +121,7 @@ a{
   color:var(--button-background);
 }
 
-  @media (-moz-touch-enabled: 0), (hover: hover){
+@media (-moz-touch-enabled: 0), (hover: hover){
     .button::before{
       transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     }
@@ -125,10 +132,113 @@ a{
     }
 }
 
-/*  */
+/* SWIPER */
+
+
+
+.swiper-container{
+  position: relative;
+  /* background:green; */
+  padding: 0 2em;
+}
+
+.swiper-container .swiper-navigation-container{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  margin: 0 auto;
+  top: 50%;
+  background-color: green;
+}
+
+.prev,
+.next {
+  z-index: 100;
+  width: 45px;
+  height: 45px;
+  stroke-width: 1px;
+  border: none;
+  border-radius: 50%;
+  background: var(--button-text-color);
+  color: var(--button-background);
+  cursor: pointer;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0 2px 10px rgb(54 54 54 / 15%);
+  vertical-align: middle;
+  line-height: 0;
+  transform: scale(1.001);
+  transition: background 0.15s ease-in-out, opacity 0.15s ease-in-out, transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  overflow: hidden;
+  position: inherit;
+}
+.next{
+  right: 1.5em;
+}
+.prev::before,
+.next::before {
+  /* content: "→"; */
+  font-size: 11px !important;
+  color: #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #ccc;
+}
+
+.prev:hover::before {
+  left: 20%;
+  transition: left 0.3s ease;
+}
+
+.swiper-button-next:hover::before {
+  left: 80%;
+  transition: left 0.3s ease;
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.swiper-button-prev::before {
+  content: "←";
+}
+
+.swiper-button-next::before {
+  content: "→";
+}
+
+.swiper-button-prev.circle,
+.swiper-button-next.circle {
+  border-radius: 50%;
+}
+
+.swiper-button-prev.circle::before,
+.swiper-button-next.circle::before {
+  font-size: 24px;
+  color: #ccc;
+}
+
+.swiper-button-prev.circle:hover::before {
+  left: 30%;
+  transition: left 0.3s ease;
+}
+
+.swiper-button-next.circle:hover::before {
+  left: 70%;
+  transition: left 0.3s ease;
+}
+
 
 /* END GLOBAL'S */
-
 
 
 /* HEADERS */
@@ -180,22 +290,6 @@ a{
   margin-bottom: 0;
 }
 
-/* .Navbar .NavLogo h3{
-  font-size: 35px;
-  margin:none !important;
-  font-family: Roboto;
-  font-weight: bold;
-} */
-
-
-
-/* @media screen and (min-width: 641px){
-  .Navbar{
-      padding: 18px 30px;
-  }
-} */
-
-
 /* Hero Image */
 .hero-image{
   object-fit: cover;
@@ -203,9 +297,7 @@ a{
   height: 100%;
 }
 
-
-
-
+/*  */
 
 /* SWIPER */
 .swiperHero {
@@ -266,6 +358,7 @@ a{
   font-weight: 500;
   font-size: 20px;
 }
+
 .Promotion-display .head .buttons-container a{cursor: pointer;}
 
 .Promotion-display .head .buttons-container a.active{
@@ -290,6 +383,7 @@ a{
   cursor: -webkit-grab;
 
 }
+
 .Promotion-display .promotionSwiper:active{
   cursor: grabbing;
   cursor: -webkit-grabbing;
@@ -318,6 +412,19 @@ a{
   min-height: 250px;
 }
 
+.Promotion-display .promotionSwiper .card .head .product-label{
+  display: block;
+  /* font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 9px)); */
+  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 11px));
+  color: var(--text-color-light);
+  margin: 4px 0;
+  padding: 2px 6px;
+  background: var(--background);
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
 .Promotion-display .promotionSwiper .card .head .AspectRatio{
   padding-bottom: 0;
   aspect-ratio: 1.0;
@@ -327,7 +434,6 @@ a{
   max-width: 250.0px;
   min-height: 250px;
 }
-
 
 /* Aspect Ratio */
 .AspectRatio {
@@ -362,6 +468,7 @@ a{
   align-items: center;
   
 }
+
 .Promotion-display .promotionSwiper .card .body > div > h3, .Promotion-display .promotionSwiper .card .body > div > span{
   font-family: var(--heading-font-family) !important;
   font-size: 12px !important;
@@ -369,9 +476,38 @@ a{
   font-style: var(--heading-font-style) !important;
 }
 
+.Promotion-display .promotionSwiper .card .body .price-box{
+  display: flex;
+  gap:1em;
+  align-items: center;
+  opacity: .8;
+}
 
+.Promotion-display .promotionSwiper .card .body .price-box .discount{
+  display: inline-block;
+  color:var(--product-sale-price-color);
+}
+
+.Promotion-display .promotionSwiper .card .body .price-box .full-price{
+  position: relative;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.Promotion-display .promotionSwiper .card .body .price-box .full-price::before{
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -0.4em;
+  width: calc(100% + 0.8em);
+  height: 1px;
+  background: currentColor;
+}
 
 /* END PROMOTION DISPLAY */
+
+
+
 
 /* Footer */
 .footer{
@@ -413,7 +549,6 @@ a{
   /* margin-bottom: 20px; */
 }
 
-
 .footer .container .footerGrid .col-1,
 .footer .container .footerGrid .col-2,
 .footer .container .footerGrid .col-3,
@@ -449,6 +584,7 @@ a{
 .footer .container .footerGrid .col-1{
   flex-basis: 400px;
 }
+
 .footer .container .footerGrid .col-4{
   flex-basis: 305px;
 }
@@ -522,7 +658,7 @@ a{
 
 }
 
-  @media (-moz-touch-enabled: 0), (hover: hover){
+@media (-moz-touch-enabled: 0), (hover: hover){
     .footer .container .footerGrid .col-4 .content button::before{
       transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     }

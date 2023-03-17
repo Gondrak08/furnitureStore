@@ -174,7 +174,7 @@ a{
   position: inherit;
 }
 .next{
-  right: 1.5em;
+  right: 50px;
 }
 .prev::before,
 .next::before {

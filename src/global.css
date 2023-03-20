@@ -59,11 +59,10 @@ a{
  }
  
  .container{
-   max-width: 2300px;
+   max-width: 1300px;
    width: 98%;
  }
  
-
 /* Buttons */
 
 .button {
@@ -95,7 +94,7 @@ a{
   -webkit-tap-highlight-color: initial;
 }
 
- .button::before {
+.button::before {
   position: absolute;
   content: "";
   display: block;
@@ -108,7 +107,7 @@ a{
   transform: scale(1, 1);
   transform-origin: left center;
   z-index: -1;
-  /* transition: width 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86); */
+
 }
 
 .button:before {
@@ -116,20 +115,34 @@ a{
 }
 
 .button:hover {
-  /* background-color: transparent; */
   background-color: #ffffff;
   color:var(--button-background);
 }
 
-@media (-moz-touch-enabled: 0), (hover: hover){
-    .button::before{
-      transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    }
+.button.white{
+  color:var(--button-background) !important;
+  border-color: #ffffff !important;
+}
 
-    .button:hover::before {
-      transform-origin: right center;
-      transform: scale(0, 1);  
-    }
+.button.white:before {
+  background-color: #ffffff;
+}
+
+.button.white:hover {
+  background-color: transparent;
+  color:#ffffff !important;
+}
+
+
+@media (-moz-touch-enabled: 0), (hover: hover){
+  .button::before{
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+
+  .button:hover::before {
+    transform-origin: right center;
+    transform: scale(0, 1);  
+  }
 }
 
 /* SWIPER */
@@ -414,7 +427,6 @@ a{
 
 .Promotion-display .promotionSwiper .card .head .product-label{
   display: block;
-  /* font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 9px)); */
   font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 11px));
   color: var(--text-color-light);
   margin: 4px 0;
@@ -428,9 +440,7 @@ a{
 .Promotion-display .promotionSwiper .card .head .AspectRatio{
   padding-bottom: 0;
   aspect-ratio: 1.0;
-  
   max-height: 250px;
-  /* height: 100%; */
   max-width: 250.0px;
   min-height: 250px;
 }
@@ -465,8 +475,7 @@ a{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  
+  align-items: center; 
 }
 
 .Promotion-display .promotionSwiper .card .body > div > h3, .Promotion-display .promotionSwiper .card .body > div > span{
@@ -506,6 +515,178 @@ a{
 
 /* END PROMOTION DISPLAY */
 
+/* SIDEBAR HERO */
+.sidebarhero-container{
+  width: 100%;
+  /* height: 100%; */
+  height: 15em;
+  position: relative;
+  display: inline-block;
+}
+
+.sidebarhero-container::before{
+  content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.3); 
+   /* z-index: 1; */
+}
+
+.sidebarhero-container .content{
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* align-self: center; */
+  /* background-color: green; */
+  /* gap:.5em; */
+  width:fit-content;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  /* opacity: 1; */
+  z-index: 1;
+}
+
+.sidebarhero-container .content .heading{
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 22px)) !important;
+  color: #ffffff;
+  transition: color 0.2s ease-in-out;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  opacity: 1;
+  z-index:1;
+}
+
+/* .sidebarhero-container .content .see-more-button-display .button .white{
+  background: #ffffff !important;
+} */
+
+
+/* ARTICLE'S DISPLAY */
+
+.article-section{
+  display: inline-block;
+  width:100%;
+  height: fit-content;
+  padding:  80px 0;
+}
+.article-section .container{
+  margin:0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5em !important;
+}
+
+.article-section .container .head{
+    font-family: var(--heading-font-family);
+    font-style: var(--heading-font-style);
+    color: var(--heading-color);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    text-align: center;
+}
+
+.article-section .container .head h3{
+  font-size: 12px;
+  font-weight: 400;
+}
+.article-section .container .head span{
+  font-weight: var(--heading-font-weight);
+  font-size: 20px;
+}
+
+.article-section .container .grid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:5em;
+  width:100%;
+  height: 100%;
+
+}
+
+.article-section .container .grid .col{
+  background: var(--background);
+  /* height: 25em; */
+  width: 100%;
+  height: fit-content;
+
+}
+
+.article-section .container .grid .col .card{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.article-section .container .grid .col .card .image-container{
+  width: 100%;
+  height: 13em;
+  position: relative;
+}
+
+.article-section .container .grid .col .card .image-container .AspectRatio{
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.article-section .container .grid .col .card .image-container .AspectRatio > img{
+  object-fit: cover;
+}
+
+.article-section .container .grid .col .card .content{
+  width: 100%;
+  padding: 1em;
+  display: block;
+  box-sizing: border-box;
+}
+.article-section .container .grid .col .card .content h3{
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-style: var(--heading-font-style);
+}
+
+.article-section .container .grid .col .card .content p {
+  font-family: var(--text-font-family);
+  font-weight: var(--text-font-weight);
+  font-style: var(--text-font-style);
+  color: var(--text-color);
+  background: var(--background);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.article-section .container .grid .col .card .content a {
+  transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  position: relative;
+  display: inline-block;
+}
+
+.article-section .container .grid .col .card .content a::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background: currentColor;
+  transform: scale(1, 1);
+  transform-origin: left center;
+  transition: transform 0.2s ease-in-out;
+}
 
 
 
@@ -524,7 +705,12 @@ a{
   font-size:14px;
 }
 
-.footer .container .footerGrid{
+.footer .footer-container{
+  max-width: 2300px;
+  width: 98%;
+}
+
+.footer .footer-container .footerGrid{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -532,11 +718,11 @@ a{
   
 }
 
-.footer .container .footerGrid div{
+.footer .footer-container .footerGrid div{
   flex: 0 1 auto;
 }
 
-.footer .container .footerGrid h3{
+.footer .footer-container .footerGrid h3{
   margin: 0 !important;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -549,25 +735,25 @@ a{
   /* margin-bottom: 20px; */
 }
 
-.footer .container .footerGrid .col-1,
-.footer .container .footerGrid .col-2,
-.footer .container .footerGrid .col-3,
-.footer .container .footerGrid .col-4{
+.footer .footer-container .footerGrid .col-1,
+.footer .footer-container .footerGrid .col-2,
+.footer .footer-container .footerGrid .col-3,
+.footer .footer-container .footerGrid .col-4{
   margin-bottom: 50px;
   padding-left: 25px;
   padding-right: 25px;
   position: relative;
 }
 
-.footer .container .footerGrid .col-2 ,
-.footer .container .footerGrid .col-3 ,
-.footer .container .footerGrid .col-4 {
+.footer .footer-container .footerGrid .col-2 ,
+.footer .footer-container .footerGrid .col-3 ,
+.footer .footer-container .footerGrid .col-4 {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
 }
-.footer .container .footerGrid .col-2 .links,
-.footer .container .footerGrid .col-3 .links{
+.footer .footer-container .footerGrid .col-2 .links,
+.footer .footer-container .footerGrid .col-3 .links{
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -575,32 +761,32 @@ a{
   transition: all 0.2s ease-in-out;
 }
 
-.footer .container .footerGrid .col-2 .links a:hover,
-.footer .container .footerGrid .col-3 .links a:hover{
+.footer .footer-container .footerGrid .col-2 .links a:hover,
+.footer .footer-container .footerGrid .col-3 .links a:hover{
   color: var(--text-color);
   cursor: pointer;
 }
 
-.footer .container .footerGrid .col-1{
+.footer .footer-container .footerGrid .col-1{
   flex-basis: 400px;
 }
 
-.footer .container .footerGrid .col-4{
+.footer .footer-container .footerGrid .col-4{
   flex-basis: 305px;
 }
 
-.footer .container .footerGrid .col-1 > p{
+.footer .footer-container .footerGrid .col-1 > p{
   margin-top: 1.5em;
   margin-bottom: 1.6em;
 }
 
-.footer .container .footerGrid .col-1 > span{
+.footer .footer-container .footerGrid .col-1 > span{
   font-weight: bold;
   /* margin-top: 2.5em !important; */
 
 }
 
-.footer .container .footerGrid .col-4 .content button {
+.footer .footer-container .footerGrid .col-4 .content button {
 
   margin-top: 18px;
 
@@ -629,7 +815,7 @@ a{
   -webkit-tap-highlight-color: initial;
 }
 
-.footer .container .footerGrid .col-4 .content button::before {
+.footer .footer-container .footerGrid .col-4 .content button::before {
   position: absolute;
   content: "";
   display: block;
@@ -645,13 +831,13 @@ a{
   /* transition: width 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86); */
 }
 
-.footer .container .footerGrid .col-4 .content button::before {
+.footer .footer-container .footerGrid .col-4 .content button::before {
   background-color: var(--button-background);
 
 }
 
 
-.footer .container .footerGrid .col-4 .content button:hover {
+.footer .footer-container .footerGrid .col-4 .content button:hover {
   /* background-color: transparent; */
   background-color: #ffffff;
   color:var(--button-background)
@@ -659,11 +845,11 @@ a{
 }
 
 @media (-moz-touch-enabled: 0), (hover: hover){
-    .footer .container .footerGrid .col-4 .content button::before{
+    .footer .footer-container .footerGrid .col-4 .content button::before{
       transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     }
 
-    .footer .container .footerGrid .col-4 .content button:hover::before {
+    .footer .footer-container .footerGrid .col-4 .content button:hover::before {
       transform-origin: right center;
       transform: scale(0, 1);  
     }

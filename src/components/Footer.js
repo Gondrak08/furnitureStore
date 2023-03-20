@@ -2,7 +2,7 @@ const Footer = ()=>{
 
     return(
         <footer className="footer" >
-            <div className="container">
+            <div className="footer-container">
                 <div className="footerGrid" >
                     <div className="col-1">
                         <h3>Sobre a Home Store</h3>

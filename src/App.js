@@ -3,7 +3,7 @@ import './global.css';
 
 import {ArrPromotions, Promotion} from './utils/promotions'
 
-import {promoBackgroundOne,promoBackgroundTwo} from './utils/promoHeroData';
+import {promoBackgroundOne,promoBackgroundTwo, promoBackgroundThree} from './utils/promoHeroData';
 
 
 
@@ -23,15 +23,24 @@ function App() {
         background={promoBackgroundOne.background} 
         title={promoBackgroundOne.title} 
         buttonText={promoBackgroundOne.btnText} 
+        height={null} 
+
        />      
       <ArticleSection/>
       <PromoHero 
         background={promoBackgroundTwo.background} 
         title={promoBackgroundTwo.title} 
         buttonText={promoBackgroundTwo.btnText} 
+        height={null} 
+
        />
       <ProductDisplay/>
-
+      <PromoHero 
+        background={promoBackgroundThree.background} 
+        title={null} 
+        buttonText={promoBackgroundThree.btnText}
+        height={"25em"} 
+      />
       <Footer/>
     </div>
   );

@@ -23,13 +23,12 @@ const Articles = [
         description: "A coleção Bohotanic abre as portas para a natureza entrar em casa. Inspirada na exuberância da flora tropical esta coleção alegra os espaços, com u...",
         link: "#"
     }
-]
+];
 
-const ArticleCard = (prop) =>{
-    const {image,title,description,link} = prop.article;
-    
+const ArticleCard = (prop) => {
+    const { image, title, description, link } = prop.article;
 
-    return(
+    return (
         <div className='card'>
             <div className='image-container'>
                 <div className='AspectRatio' >
@@ -42,10 +41,10 @@ const ArticleCard = (prop) =>{
                 <a href={link} >ler mais</a>
             </div>
         </div>
-)}
+    )
+};
 
 const ArticleSection = () => {
-
     return (
         <section className='article-section'>
             <div className='container'>
@@ -56,13 +55,13 @@ const ArticleSection = () => {
                     <span>mobiliário e decoração</span>
                 </div>
                 <div className='grid' >
-                    {Articles.map((article, index)=>(
-                        <div className='col'key={index} >
+                    {Articles.map((article, index) => (
+                        <div className='col' key={index} >
                             <ArticleCard article={article} />
                         </div>
                     ))}
                 </div>
-            <div className="see-more-button-display">
+                <div className="see-more-button-display">
                     <button className="button" >Visitar Blog</button>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 const SideHero = ({background, title, buttonText})=>{
     return(
-        <section className="sidebarhero-container" style={{backgroundImage:`url(${background})`}} >
+        <section className="promohero-container" style={{backgroundImage:`url(${background})`}} >
             <div className="content" >
                 <h3 className="heading" >
                     {title}

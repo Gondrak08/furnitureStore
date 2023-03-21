@@ -1,9 +1,9 @@
-import {Navbar,Hero,SideHero,Promotions, ArticleSection, Footer} from './components'
+import {Navbar,Hero,PromoHero,Promotions, ArticleSection, Footer, ProductDisplay} from './components'
 import './global.css';
 
 import {ArrPromotions, Promotion} from './utils/promotions'
 
-import {sideBackgroundOne} from './utils/sideHeroData';
+import {promoBackgroundOne,promoBackgroundTwo} from './utils/promoHeroData';
 
 
 
@@ -18,14 +18,19 @@ function App() {
       </header>
       {/* <Promotions  /> */}
       <Promotions promotion={ArrPromotions} />
-      <SideHero 
-        background={sideBackgroundOne.background} 
-        title={sideBackgroundOne.title} 
-        buttonText={sideBackgroundOne.btnText} 
-       />
       <Promotions promotion={Promotion} />
-      
+      <PromoHero 
+        background={promoBackgroundOne.background} 
+        title={promoBackgroundOne.title} 
+        buttonText={promoBackgroundOne.btnText} 
+       />      
       <ArticleSection/>
+      <PromoHero 
+        background={promoBackgroundTwo.background} 
+        title={promoBackgroundTwo.title} 
+        buttonText={promoBackgroundTwo.btnText} 
+       />
+      <ProductDisplay/>
 
       <Footer/>
     </div>

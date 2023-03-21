@@ -19,6 +19,7 @@ const ProductDisplay = () => {
     return (
         <div className="product-display">
             <div className="container">
+                <h2>história da semana</h2>
                 <div className="grid">
                     <div className="col-one" >
                         <div className='image'>

@@ -3,7 +3,7 @@ import {useState} from 'react';
 import ProductImage from '../assets/productImage.webp'
 
 const ProductDisplay = () => {
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(1);
 
     const Increment = (e) => {
         e.preventDefault();

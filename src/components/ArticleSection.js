@@ -38,7 +38,7 @@ const ArticleCard = (prop) => {
             <div className='content'>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <a href={link} >ler mais</a>
+                <a href={link} className="link link-underline" >ler mais</a>
             </div>
         </div>
     )

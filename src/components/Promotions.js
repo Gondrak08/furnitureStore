@@ -7,6 +7,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import { SlArrowLeft,SlArrowRight} from 'react-icons/sl'
+
 
 const SinglePromotion = ({ promotion, products, button }) => {
     const promotionName = promotion.name;
@@ -155,11 +157,11 @@ const ArrPromotions = ({ products, button }) => {
 
             </Swiper>
             <div className='swiper-navigation-container' >
-                <button className='prev'>
-                    {"<"}
+                <button className='prev' data-animate-left={true}>
+                    <SlArrowLeft className='animate-icon' />
                 </button>
-                <button className='next'>
-                    {">"}
+                <button className='next' data-animate-right={true} >
+                    <SlArrowRight className='animate-icon' />
                 </button>
             </div>
 

@@ -1,5 +1,5 @@
 const SideHero = ({background, title, buttonText, height})=>{
-    console.log(height);
+ 
     return(
         <section className="promohero-container" style={{backgroundImage:`url(${background})`, height:`${height}`}} >
             <div className="content" >

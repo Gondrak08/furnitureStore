@@ -70,6 +70,8 @@ const SinglePromotion = ({ promotion, products, button }) => {
         </>)
 };
 
+
+
 const ArrPromotions = ({ products, button }) => {
     useEffect(() => {
         if (selectButton == '') {
@@ -78,6 +80,8 @@ const ArrPromotions = ({ products, button }) => {
         }
     }, [])
     const [selectButton, setSelectButton] = useState("");
+
+    console.log(selectButton)
 
     const buttonSelect = (e) => {
         const id = e.target.id;
@@ -89,7 +93,8 @@ const ArrPromotions = ({ products, button }) => {
             <div className="buttons-container" >
                 {
                     Object.keys(products).map((key) => (
-                        <a id={products[key].type} onClick={(e) => buttonSelect(e)} className={`${selectButton == products[key].type ? 'active' : null}`}  >
+                        <a id={products[key].type} role="tab"  onClick={(e) => buttonSelect(e)} className={`tab-button ${selectButton == products[key].type ? 'active' : null}`}  >
+                          
                             {products[key].name} {products[key].promotionText}
                         </a>
                     )
@@ -157,10 +162,10 @@ const ArrPromotions = ({ products, button }) => {
 
             </Swiper>
             <div className='swiper-navigation-container' >
-                <button className='prev' data-animate-left={true}>
+                <button className='prev' data-animate-left>
                     <SlArrowLeft className='animate-icon' />
                 </button>
-                <button className='next' data-animate-right={true} >
+                <button className='next' data-animate-right >
                     <SlArrowRight className='animate-icon' />
                 </button>
             </div>

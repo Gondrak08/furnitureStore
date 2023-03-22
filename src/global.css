@@ -628,13 +628,24 @@ a {
 
 .Promotion-display .head .buttons-container a {
   cursor: pointer;
+  position: relative;
+  text-decoration: none;
 }
 
-.Promotion-display .head .buttons-container a.active {
-  text-decoration: underline;
-  text-underline-offset: 0.5em;
-  text-decoration-thickness: 0.5px;
-  padding: 0;
+.Promotion-display .head .buttons-container a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease-out;
+}
+
+.Promotion-display .head .buttons-container a.active::after {
+  width: 100%;
 }
 
 .Promotion-display .swiper-container {

@@ -40,7 +40,7 @@ const Footer = ()=>{
                     </div>
                     <div className="col-5 dead-col" />
                 </div>
-                <div>
+                <div className="madeBy" >
                     <span>Demo website made by @vitorAlecrim</span>
                 </div>
 

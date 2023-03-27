@@ -1,9 +1,19 @@
-import {Navbar,Hero,PromoHero,Promotions, ArticleSection, Footer, ProductDisplay} from './components'
+import {
+  Navbar,
+  Hero,
+  PromoHero,
+  Promotions,
+  ArticleSection,
+  Footer,
+  ProductDisplay} from './components'
 import './global.css';
 
 import {ArrPromotions, Promotion} from './utils/promotions'
 
-import {promoBackgroundOne,promoBackgroundTwo, promoBackgroundThree} from './utils/promoHeroData';
+import {
+  promoBackgroundOne,
+  promoBackgroundTwo, 
+  promoBackgroundThree} from './utils/promoHeroData';
 
 
 
@@ -24,7 +34,7 @@ function App() {
         title={promoBackgroundOne.title} 
         buttonText={promoBackgroundOne.btnText} 
         height={null} 
-
+        styleClass={null}
        />      
       <ArticleSection/>
       <PromoHero 
@@ -32,14 +42,15 @@ function App() {
         title={promoBackgroundTwo.title} 
         buttonText={promoBackgroundTwo.btnText} 
         height={null} 
-
+        styleClass={null}
        />
       <ProductDisplay/>
       <PromoHero 
         background={promoBackgroundThree.background} 
         title={null} 
         buttonText={promoBackgroundThree.btnText}
-        height={"25em"} 
+        height={"25em"}
+        styleClass={"bottom-hero"} 
       />
       <Footer/>
     </div>

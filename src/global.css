@@ -1345,12 +1345,12 @@ a {
 .popup-container .card{
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1.5em;
   position: relative;
 }
 .popup-container .card .close-button{
   position: absolute;
-  right: -10px;
+  right: -15px;
   top: -15px;
   max-width: fit-content;
   align-self: flex-end;

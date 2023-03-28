@@ -5,7 +5,8 @@ import {
   Promotions,
   ArticleSection,
   Footer,
-  ProductDisplay} from './components'
+  ProductDisplay,
+  PopUp } from './components'
 import './global.css';
 
 import {ArrPromotions, Promotion} from './utils/promotions'
@@ -52,6 +53,7 @@ function App() {
         height={"25em"}
         styleClass={"bottom-hero"} 
       />
+      <PopUp/>
       <Footer/>
     </div>
   );

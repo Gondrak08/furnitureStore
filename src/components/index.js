@@ -5,6 +5,7 @@ export {default as Promotions} from './Promotions';
 export {default as PromoHero} from './PromoHero';
 export {default as ArticleSection} from './ArticleSection';
 export {default as ProductDisplay} from './ProductDisplay';
+export {default as PopUp} from './Popup';
 
 
 

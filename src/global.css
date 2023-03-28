@@ -346,7 +346,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 80px;
+  padding: 10px 35px;
 }
 
 .Navbar .content .NavButtonContainer {
@@ -1338,7 +1338,7 @@ a {
     right: 25px;
     bottom: 25px;
     left: auto;
-    padding-top: 35px;
+    /* padding-top: 35px; */
 }
 }
 
@@ -1351,7 +1351,7 @@ a {
 .popup-container .card .close-button{
   position: absolute;
   right: -10px;
-  top: -22px;
+  top: -15px;
   max-width: fit-content;
   align-self: flex-end;
   background-color: transparent;

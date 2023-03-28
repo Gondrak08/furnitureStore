@@ -15,7 +15,7 @@ const PopUp = () => {
                 </div>
                 <div className="content">
                     <input className='email-input' type="email" placeholder="Inserir email"  />
-                    <button className="button white" >Subscreva</button>
+                    <button className="button white" >Subscrever</button>
                 </div>
             </div>
         </section>

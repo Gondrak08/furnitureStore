@@ -6,7 +6,7 @@ import LogoSvgWhite from '../assets/LogoSvg.js'
 import LogoSvgBlack from '../assets/LogoSvgBlack.js'
 
 
-const Navbar = () => {
+const Navbar = ({setIsOpen, setIsMenu}) => {
 
     document.addEventListener("scroll",function(){
         if(window.scrollY > 0){
@@ -20,7 +20,7 @@ const Navbar = () => {
         <section className="Navbar">
             <div className='content'>
                 <div className='NavButtonContainer' >
-                    <GiHamburgerMenu size={25} />
+                    <GiHamburgerMenu className='menu-button' size={25} onClick={()=>{setIsMenu(true)}} />
                 </div>
                 <div className='NavLogo' >
       
@@ -30,7 +30,7 @@ const Navbar = () => {
                 <div className='NavIconsContainer' >
                     <AiOutlineUser className='avatar' size={25} />
                     <BsSearch className='search' size={20} />
-                    <BsBag className='shopbag' size={22} />
+                    <BsBag className='shopbag' size={22} onClick={()=>{setIsOpen(true)}} />
                 </div>
 
             </div>

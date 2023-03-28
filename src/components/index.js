@@ -6,6 +6,10 @@ export {default as PromoHero} from './PromoHero';
 export {default as ArticleSection} from './ArticleSection';
 export {default as ProductDisplay} from './ProductDisplay';
 export {default as PopUp} from './Popup';
+export {default as ShopCart} from './ShopCart';
+export {default as SideBar} from './SideBar';
+
+
 
 
 

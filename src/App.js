@@ -1,12 +1,17 @@
+import {useState} from 'react';
+
 import {
   Navbar,
+  SideBar,
   Hero,
   PromoHero,
   Promotions,
   ArticleSection,
   Footer,
   ProductDisplay,
-  PopUp } from './components'
+  PopUp,
+  ShopCart 
+} from './components'
 import './global.css';
 
 import {ArrPromotions, Promotion} from './utils/promotions'
@@ -14,20 +19,18 @@ import {ArrPromotions, Promotion} from './utils/promotions'
 import {
   promoBackgroundOne,
   promoBackgroundTwo, 
-  promoBackgroundThree} from './utils/promoHeroData';
-
-
-
-
+  promoBackgroundThree
+} from './utils/promoHeroData';
 
 function App() {
+  const[isShoppingCart, setIsShoppingCart] = useState(false);
+  const [isSideMenu, setIsSideMenu] = useState(false);
   return (
     <div className="App">
       <header className="App-header">
-        <Navbar/>
+        <Navbar setIsOpen={setIsShoppingCart}  setIsMenu={setIsSideMenu} />
         <Hero/>    
       </header>
-      {/* <Promotions  /> */}
       <Promotions promotion={ArrPromotions} />
       <Promotions promotion={Promotion} />
       <PromoHero 
@@ -53,8 +56,10 @@ function App() {
         height={"25em"}
         styleClass={"bottom-hero"} 
       />
-      <PopUp/>
       <Footer/>
+      <PopUp/>
+      <ShopCart isOpen={isShoppingCart} setIsOpen={setIsShoppingCart} />
+      <SideBar isOpen={isSideMenu} setIsOpen={setIsSideMenu} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ const PopUp = () => {
     return (
         <section aria-hidden={isClosed} className="popup-container">
             <div className="card">
-                <button className="close-button" >X</button>
+                <button className="close-button" onClick={()=>{setIsClosed(true)}}>X</button>
                 <div className="head" >
                     <h2 className='title' >10% DE DESCONTO</h2>
                     <p className='text'>

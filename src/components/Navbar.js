@@ -1,3 +1,6 @@
+import {useDispatch} from 'react-redux';
+import { toggleCart } from '../redux/reducer';
+
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { BsBag, BsSearch } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
@@ -5,8 +8,7 @@ import { AiOutlineUser } from 'react-icons/ai';
 import LogoSvgWhite from '../assets/LogoSvg.js'
 import LogoSvgBlack from '../assets/LogoSvgBlack.js'
 
-
-const Navbar = ({setIsOpen, setIsMenu}) => {
+const Navbar = ({setIsMenu}) => {
     document.addEventListener("scroll",function(){
         if(window.scrollY > 0){
             document.querySelector(".Navbar").classList.add("scroll");
@@ -14,6 +16,8 @@ const Navbar = ({setIsOpen, setIsMenu}) => {
             document.querySelector(".Navbar").classList.remove("scroll");
         }
     });
+
+    const dispatch = useDispatch()
 
     return (
         <section className="Navbar">
@@ -28,7 +32,7 @@ const Navbar = ({setIsOpen, setIsMenu}) => {
                 <div className='NavIconsContainer' >
                     <AiOutlineUser className='avatar' size={25} />
                     <BsSearch className='search' size={20} />
-                    <BsBag className='shopbag' size={22} onClick={()=>{setIsOpen(true)}} />
+                    <BsBag className='shopbag' size={22} onClick={()=>{dispatch(toggleCart(true))}} />
                 </div>
 
             </div>

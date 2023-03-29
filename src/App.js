@@ -1,4 +1,6 @@
 import {useState} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import { toggleCart } from './redux/reducer';
 
 import {
   Navbar,
@@ -25,10 +27,17 @@ import {
 function App() {
   const[isShoppingCart, setIsShoppingCart] = useState(false);
   const [isSideMenu, setIsSideMenu] = useState(false);
+  
+  const dispatch = useDispatch()
+
+  const isCart = useSelector(state=>state.toggleCart);
+
+  console.log(isCart)
+  
   return (
     <div className="App">
       <header className="App-header">
-        <Navbar setIsOpen={setIsShoppingCart}  setIsMenu={setIsSideMenu} />
+        <Navbar setIsMenu={setIsSideMenu} />
         <Hero/>    
       </header>
       <Promotions promotion={ArrPromotions} />
@@ -58,7 +67,7 @@ function App() {
       />
       <Footer/>
       <PopUp/>
-      <ShopCart isOpen={isShoppingCart} setIsOpen={setIsShoppingCart} />
+      <ShopCart  />
       <SideBar isOpen={isSideMenu} setIsOpen={setIsSideMenu} />
     </div>
   );

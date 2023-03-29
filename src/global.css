@@ -1438,7 +1438,23 @@ a {
     right: 25px;
     bottom: 25px;
     left: auto;
-    /* padding-top: 35px; */
+
+  }
+}
+
+@media (max-width:641px){
+  .popup-container {
+    /* width: 95%; */
+    max-width: 320px;
+    right: 5px;
+    bottom: 25px;
+    left: auto;
+  }
+}
+@media (max-width:388px){
+  .popup-container {
+    max-width: 250px;
+  
   }
 }
 

@@ -1444,7 +1444,6 @@ a {
 
 @media (max-width:641px){
   .popup-container {
-    /* width: 95%; */
     max-width: 320px;
     right: 5px;
     bottom: 25px;

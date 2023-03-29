@@ -1235,6 +1235,7 @@ a {
   margin-bottom: 20px;
 }
 
+/*  */
 
 /* PRODUCT DISPLAY */
 .product-display {
@@ -1251,7 +1252,7 @@ a {
 
 @media screen and (max-width:768px) {
   .product-display .container {
-    padding: 15px;
+    padding: 15px 35px;
   }
 }
 

@@ -23,7 +23,6 @@ const Navbar = ({setIsOpen, setIsMenu}) => {
                     <GiHamburgerMenu className='menu-button' size={25} onClick={()=>{setIsMenu(true)}} />
                 </div>
                 <div className='NavLogo' >
-      
                     <LogoSvgBlack className="logo black" />
                     <LogoSvgWhite className="logo white" />
                 </div>

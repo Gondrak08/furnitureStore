@@ -2,8 +2,6 @@ import ImageOne from '../assets/articleOne.png';
 import ImageTwo from '../assets/articleTwo.webp'
 import ImageThree from '../assets/articleThree.webp';
 
-
-
 const Articles = [
     {
         image: ImageOne,
@@ -32,7 +30,7 @@ const ArticleCard = (prop) => {
         <div className='card'>
             <div className='image-container'>
                 <div className='AspectRatio' >
-                    <img src={image} />
+                    <img src={image} alt="a imagem da capa do artigo" />
                 </div>
             </div>
             <div className='content'>

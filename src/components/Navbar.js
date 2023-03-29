@@ -7,7 +7,6 @@ import LogoSvgBlack from '../assets/LogoSvgBlack.js'
 
 
 const Navbar = ({setIsOpen, setIsMenu}) => {
-
     document.addEventListener("scroll",function(){
         if(window.scrollY > 0){
             document.querySelector(".Navbar").classList.add("scroll");

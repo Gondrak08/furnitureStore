@@ -1591,20 +1591,75 @@ a {
 }
 
 
-
 .shopcart-container .aside-container .shopcart .content {
   padding: 10px 30px;
-  height: 100%;
+  height: fit-content;
   width: 100%;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
+  box-sizing: border-box;
+}
+
+.shopcart-container .aside-container .shopcart .content .empty-cart {
+  align-items: center;
+  height: 100%;
 }
 
 .shopcart-container .aside-container .shopcart .content .empty-message {
   font-size: 14px;
   font-weight: 500;
 }
+
+.shopcart-container .aside-container .shopcart .content .table{
+  width: 100%;
+  /* background: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.shopcart-container .aside-container .shopcart .content .table .image{
+  width: 35%;
+  height: 5em;
+  position: relative;
+}
+.shopcart-container .aside-container .shopcart .content .table .image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shopcart-container .aside-container .shopcart .content .table .body{
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%; 
+  box-sizing: border-box;
+  padding: 0 0.5em; 
+  font-size: 10px;
+  }
+
+.shopcart-container .aside-container .shopcart .content .table .body .product-name{
+  font-size: 11px;
+}
+
+.shopcart-container .aside-container .shopcart .content .table .body .product-description{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.shopcart-container .aside-container .shopcart .content .table .body .product-description .price-box{
+  padding-right:1em;
+}
+
+.shopcart-container .aside-container .shopcart .content .table .body .product-description .price-box .price{
+  font-size: 12px;
+}
+
+
 
 /* END */
 

@@ -7,8 +7,9 @@ const ShopCart = ()=>{
     const dispatch = useDispatch()
 
     const isCart = useSelector(state=>state.toggleCart);
+    const listOfItems = useSelector(state=>state.list);
 
-    // console.log(setIsOpen)
+    console.log(listOfItems);
     return(
         <section aria-hidden={isCart} className="modal-container shopcart-container">
             <aside aria-hidden={isCart} className="aside-container">
